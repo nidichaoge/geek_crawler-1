@@ -443,7 +443,7 @@ class GeekCrawler:
             comments: 评论相关数据
         Returns:
         """
-        if not file_type: file_type = '.md'
+        if not file_type: file_type = '.html'
         dir_path = pathlib.PurePosixPath() / dir_name
         if not os.path.isdir(dir_path):
             os.mkdir(dir_path)
@@ -534,10 +534,12 @@ if __name__ == "__main__":
 
     # 需要排除的课程列表，根据自己的情况定义（比如已经有的资源就不用再继续下载了）
     # exclude = ['左耳听风', '趣谈网络协议']
-    exclude = []
+    exclude = ['左耳听风', 'SRE实战手册','玩转Vue 3全家桶','图解 Google V8',
+               'Serverless入门课','深入C语言和程序运行原理','分布式数据库30讲','Redis源码剖析与实战','陈天 · Rust 编程第一课',
+               '超级访谈：对话张雪峰','透视HTTP协议','浏览器工作原理与实践','设计模式之美','MySQL实战45讲','React Hooks 核心原理与实战','Spark性能调优实战']
 
     # 需要保存文件的后缀名，尽量选 .md 或者 .html
-    file_type = '.md'
+    file_type = '.html'
 
     # 是否获取评论信息，目前暂时设置为不获取，因为 md 文档中评论显示不太好看，如果需要获取评论的话请设置保存文本为 HTML（样式好看些）
     get_comments = False  # True
